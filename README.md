@@ -1,1 +1,1 @@
-# 3s-RecommenderSystems
+# Moscow State University - Recommender Systems
