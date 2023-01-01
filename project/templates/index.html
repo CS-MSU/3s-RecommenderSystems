@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Войти в аккаунт</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      background-image: url("https://repository-images.githubusercontent.com/275336521/20d38e00-6634-11eb-9d1f-6a5232d0f84f"); /* Путь к фоновому изображению */
+      background-color: #c7b39b; /* Цвет фона */
+      }
+      form {
+      margin-top: 150px;
+
+      border: 5px solid #f1f1f1;
+      }
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      button {
+      background-color: #8ebf42;
+      color: white;
+      padding: 14px 0;
+      margin: 10px 0;
+      border: none;
+      cursor: grabbing;
+      width: 100%;
+      }
+      h1 {
+      text-align:center;
+      fone-size:18;
+      color: white;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: left;
+      margin: 24px 50px 12px;
+      }
+      .container {
+      padding: 16px 0;
+      text-align:left;
+      color: white
+      }
+      .q {
+        margin-top: 10px
+      }
+      .question{
+        margin-left: 5px;
+        color: white;
+        margin-bottom: 10px;
+      }
+      .question-answer{
+        margin-top: 10px;
+        display: block;
+        color: white;
+      }
+      span.psw {
+      float: right;
+      padding-top: 0;
+      padding-right: 15px;
+      }
+
+      input:checked {
+        border: 6px solid black;
+      }
+
+      /* Change styles for span on extra small screens */
+      @media screen and (max-width: 300px) {
+      span.psw {
+      display: block;
+      float: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="{{ url_for("index")}}" method="post">
+      <h1>Логин</h1>
+      <div class="formcontainer">
+      <hr/>
+      <div class="container">
+        <label for="uname"><strong>ID Юзера</strong></label>
+        <input type="text" placeholder="Введите ID юзера" name="uname" required>
+      </div>
+      <div class="question">
+          <label>Выберите тип операции: </label>
+          <div class="question-answer">
+            <div class="q">
+              <input type="radio" value="watched" id="radio_14" name="contact"/>
+              <label for="radio_14" class="radio"><span>Просмотренные фильмы</span></label>
+            </div>
+            <div class="q">
+              <input type="radio" value="recommend" id="radio_15" name="contact"/>
+              <label for="radio_15" class="radio"><span>Рекомендации</span></label>
+            </div>
+            <div class="q">
+              <input  type="radio" value="user_info" id="radio_16" name="contact"/>
+              <label for="radio_16" class="radio"><span>Пользовательская информация</span></label>
+            </div>
+          </div>
+      <button type="submit">Получить</button>
+    </form>
+  </body>
+</html>

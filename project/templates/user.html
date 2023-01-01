@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользовательская инфо</title>
+    <style>
+        body {
+            color: white;
+            background-image: url("https://repository-images.githubusercontent.com/275336521/20d38e00-6634-11eb-9d1f-6a5232d0f84f");
+        }
+        nav a {
+            color: White;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+
+        .book {
+            padding: 20px;
+            margin: 10px;
+            background-color: #f7f4f4;
+        }
+
+        .review {
+                margin-left: 50px;
+                font-size: 20px;
+        }
+
+        .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        }
+
+        .title {
+        color: grey;
+        font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Вернуться назад</a>
+    </nav>
+    <hr>
+    <div class="content">
+        <div class="card">
+          {% block content %}
+          <img src="https://media.istockphoto.com/id/844000052/vector/default-placeholder-man-and-woman.jpg?s=612x612&w=0&k=20&c=XiWjRXzjoY-KXG2umie8bQoAsuKUBawuTmTlwkOsJe0=" alt="User" style="width:100%">
+          <h1>UserID: {{ data[0][0] }}</h1>
+          <p class="title">Age: {{ data[0][1] }}</p>
+          <p class="title">Sex: {{ data[0][2] }}</p>
+          <p class="title">Occupation: {{ data[0][3] }}</p>
+          <p><i>zip:</i> {{ data[0][4] }}</p>
+          {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

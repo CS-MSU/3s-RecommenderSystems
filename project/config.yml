@@ -1,0 +1,7 @@
+database:
+  db: 'postgres'
+  user: 'postgres'
+  password: 'changeme'
+server:
+  host: 'localhost'
+  port: 7070
